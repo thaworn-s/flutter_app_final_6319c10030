@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_final_6319c10030/la_ui.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'art_sci_ui.dart';
 import 'en_ui.dart';
@@ -13,6 +14,8 @@ class BsUI extends StatefulWidget {
 }
 
 class _BsUIState extends State<BsUI> {
+  final Uri toLaunch = Uri(scheme: 'http', host: 'www.sau.ac.th', path: '');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +98,10 @@ class _BsUIState extends State<BsUI> {
                 IconButton(
                   icon: Image.asset('assets/images/phone-icon.png'),
                   iconSize: 40,
-                  onPressed: () => setState(() {}),
+                  onPressed: () => setState(
+                    () {
+                      _makePhoneCall('028064500');
+                    }),
                 ),
                 SizedBox(
                   width: 20.0,
@@ -104,7 +110,9 @@ class _BsUIState extends State<BsUI> {
                   icon: Image.asset('assets/images/Globe-icon.png'),
                   iconSize: 40,
                   onPressed: () => setState(
-                    () {},
+                    () {
+                      _launchInBrowser(toLaunch);
+                    },
                   ),
                 ),
               ],
@@ -211,5 +219,21 @@ class _BsUIState extends State<BsUI> {
         ),
       ),
     );
+  }
+   Future<void> _launchInBrowser(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $url';
+    }
+  }
+
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    await launchUrl(launchUri);
   }
 }
