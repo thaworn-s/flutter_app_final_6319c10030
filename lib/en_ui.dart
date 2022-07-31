@@ -4,6 +4,7 @@ import 'art_sci_ui.dart';
 import 'bs_ui.dart';
 import 'la_ui.dart';
 import 'sau_ui.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EnUI extends StatefulWidget {
   const EnUI({Key? key}) : super(key: key);
@@ -91,8 +92,6 @@ class _EnUIState extends State<EnUI> {
                 fontSize: 25.0,
               ),
             ),
-
-
             SizedBox(
               height: 20.0,
             ),
@@ -102,18 +101,20 @@ class _EnUIState extends State<EnUI> {
                 IconButton(
                   icon: Image.asset('assets/images/phone-icon.png'),
                   iconSize: 40,
+                  onPressed: () => setState(() {}),
+                ),
+                SizedBox(
+                  width: 20.0,
+                ),
+                IconButton(
+                  icon: Image.asset('assets/images/Globe-icon.png'),
+                  iconSize: 40,
                   onPressed: () => setState(
-                    () {
-                     
-                    }
+                    () {},
                   ),
-                  ),
+                ),
               ],
             ),
-
-
-
-
           ],
         ),
       ),

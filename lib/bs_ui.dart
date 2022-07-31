@@ -88,8 +88,27 @@ class _BsUIState extends State<BsUI> {
             ),
             SizedBox(
               height: 20.0,
-            )
-           
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  icon: Image.asset('assets/images/phone-icon.png'),
+                  iconSize: 40,
+                  onPressed: () => setState(() {}),
+                ),
+                SizedBox(
+                  width: 20.0,
+                ),
+                IconButton(
+                  icon: Image.asset('assets/images/Globe-icon.png'),
+                  iconSize: 40,
+                  onPressed: () => setState(
+                    () {},
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -148,7 +167,7 @@ class _BsUIState extends State<BsUI> {
                 ),
               ),
               onTap: () {
-               Navigator.push(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => ArtSciUI(),
@@ -164,7 +183,7 @@ class _BsUIState extends State<BsUI> {
                 ),
               ),
               onTap: () {
-               Navigator.push(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => BsUI(),
@@ -180,7 +199,7 @@ class _BsUIState extends State<BsUI> {
                 ),
               ),
               onTap: () {
-               Navigator.push(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => LaUI(),

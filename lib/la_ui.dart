@@ -56,6 +56,29 @@ class _LaUIState extends State<LaUI> {
                 fontSize: 25.0,
               ),
             ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  icon: Image.asset('assets/images/phone-icon.png'),
+                  iconSize: 40,
+                  onPressed: () => setState(() {}),
+                ),
+                SizedBox(
+                  width: 20.0,
+                ),
+                IconButton(
+                  icon: Image.asset('assets/images/Globe-icon.png'),
+                  iconSize: 40,
+                  onPressed: () => setState(
+                    () {},
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
